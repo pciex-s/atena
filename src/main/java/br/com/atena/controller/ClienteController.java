@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/clientes")
 public class ClienteController extends DefaultController<ClienteModel, ClienteRepository, ClienteService> {
 
 }
