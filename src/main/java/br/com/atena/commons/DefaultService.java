@@ -1,5 +1,6 @@
 package br.com.atena.commons;
 
+import br.com.atena.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
 
     @Override
     public T save(T t) {
-        return null;
+        return repo.save(t);
     }
 
     @Override
@@ -20,7 +21,7 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
 
     @Override
     public T findById(Long id) throws Exception {
-        return repo.findById(id).get();
+        return repo.findById(id).orElseThrow(()->new ObjectNotFoundException("Objeto com o id: "+id+" não encontrado"));
     }
 
     @Override
@@ -30,7 +31,7 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
 
     @Override
     public void atualizar(Long id, T t) {
-        
+
     }
 
     public R getRepository(){

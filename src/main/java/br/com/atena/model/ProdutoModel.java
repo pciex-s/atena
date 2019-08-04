@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity(name = "Produto")
@@ -23,6 +24,8 @@ public class ProdutoModel {
     private Integer qntEstoque;
     @Enumerated(EnumType.ORDINAL)
     private StatusProduto status;
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.MERGE)
     private List<CategoriaModel> categoria;
+    @Column(name = "DATA_ATUALIZACAO")
+    private LocalDate dataAtualizacao;
 }

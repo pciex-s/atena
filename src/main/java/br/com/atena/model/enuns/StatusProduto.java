@@ -2,8 +2,8 @@ package br.com.atena.model.enuns;
 
 public enum StatusProduto {
 
-    ESTOQUE(1, "ESTOQUE"),
-    FORA(2, "FORA");
+    FORA(0, "FORA"),
+    ESTOQUE(1, "ESTOQUE");
 
     private int codigo;
     private String descricao;

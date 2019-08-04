@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity(name = "categoria")
 @Data
@@ -15,4 +16,6 @@ public class CategoriaModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
+    @Column(name = "DATA_ATUALIZACAO")
+    private LocalDate dataAtualizacao;
 }
