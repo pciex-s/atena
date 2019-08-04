@@ -1,14 +1,14 @@
 package br.com.atena.model.enuns;
 
-public enum StatusProduto {
+public enum StatusCliente {
 
-    FORA(0, "FORA"),
-    ESTOQUE(1, "ESTOQUE");
+    ESTOQUE(0, "INATIVO"),
+    ATIVO(1, "ATIVO");
 
     private int codigo;
     private String descricao;
 
-    private StatusProduto(int codigo, String descricao) {
+    private StatusCliente(int codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -29,10 +29,10 @@ public enum StatusProduto {
         this.descricao = descricao;
     }
 
-    public static StatusProduto toEnum(Integer codigo) {
+    public static StatusCliente toEnum(Integer codigo) {
 
 
-        for (StatusProduto x : StatusProduto.values()) {
+        for (StatusCliente x : StatusCliente.values()) {
             if (codigo.equals(x.getCodigo()))
                 return x;
         }
