@@ -1,5 +1,7 @@
 package br.com.atena.commons;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 
 
@@ -8,6 +10,7 @@ import java.util.List;
  * @Author Rafael Castro
  */
 public interface BaseService<T extends Object> {
+
     public T save(T t);
 
     public List<T> findAll();
