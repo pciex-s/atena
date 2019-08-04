@@ -21,7 +21,8 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
 
     @Override
     public T findById(Long id) throws Exception {
-        return repo.findById(id).orElseThrow(()->new ObjectNotFoundException("Objeto com o id: "+id+" não encontrado"));
+        return repo.findById(id).orElseThrow(
+                ()->new ObjectNotFoundException("Objeto com o id: "+id+" não encontrado"));
     }
 
     @Override
@@ -31,7 +32,7 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
 
     @Override
     public void atualizar(Long id, T t) {
-
+        repo.save(t);
     }
 
     public R getRepository(){

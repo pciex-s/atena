@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Produto")
@@ -25,7 +26,7 @@ public class ProdutoModel {
     @Enumerated(EnumType.ORDINAL)
     private StatusProduto status;
     @ManyToMany(cascade = CascadeType.MERGE)
-    private List<CategoriaModel> categoria;
+    private List<CategoriaModel> categorias = new ArrayList<>();
     @Column(name = "DATA_ATUALIZACAO")
     private LocalDate dataAtualizacao;
 }

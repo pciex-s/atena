@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
 
 public class DefaultController<T extends Object, R extends BaseRepository<T, Long>, Service extends DefaultService<T, R>> {
@@ -41,5 +39,9 @@ public class DefaultController<T extends Object, R extends BaseRepository<T, Lon
     public ResponseEntity<Void> update(@RequestBody T model , @PathVariable Long id) throws Exception {
         s.atualizar(id, model);
         return ResponseEntity.noContent().build();
+    }
+
+    public Service getService(){
+        return s;
     }
 }
