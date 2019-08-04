@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "Produto")
 @Data
@@ -18,4 +19,6 @@ public class ProdutoModel {
     private Long preco;
     private Long desconto;
     private String codBarras;
+    @ManyToMany
+    private List<CategoriaModel> categoria;
 }
