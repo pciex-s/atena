@@ -15,4 +15,6 @@ public interface BaseService<T extends Object> {
     public T findById(Long id) throws Exception;
 
     public void delete(Long id);
+
+    public void atualizar(Long id, T t);
 }

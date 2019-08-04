@@ -1,5 +1,6 @@
 package br.com.atena.model;
 
+import br.com.atena.model.enuns.StatusProduto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +17,12 @@ public class ProdutoModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
-    private Long preco;
-    private Long desconto;
+    private Double preco;
+    private Double desconto;
     private String codBarras;
-    @ManyToMany
+    private Integer qntEstoque;
+    @Enumerated(EnumType.ORDINAL)
+    private StatusProduto status;
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private List<CategoriaModel> categoria;
 }
