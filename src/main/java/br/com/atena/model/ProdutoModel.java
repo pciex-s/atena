@@ -23,6 +23,7 @@ public class ProdutoModel {
     private Double desconto;
     private String codBarras;
     private Integer qntEstoque;
+    private Double precoUnitario;
     @Enumerated(EnumType.ORDINAL)
     private StatusProduto status;
     @ManyToMany(cascade = CascadeType.MERGE)
