@@ -6,8 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 
-import java.util.List;
-
 public class DefaultService<T extends Object, R extends BaseRepository<T, Long>> implements BaseService<T> {
     @Autowired
     private R repo;
