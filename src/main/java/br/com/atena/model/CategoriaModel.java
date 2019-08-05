@@ -1,5 +1,7 @@
 package br.com.atena.model;
 
+import br.com.atena.model.enuns.Status;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @Entity(name = "categoria")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class CategoriaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +21,6 @@ public class CategoriaModel {
     private String nome;
     @Column(name = "DATA_ATUALIZACAO")
     private LocalDate dataAtualizacao;
-
-    public CategoriaModel(Long id, String nome, LocalDate dataAtualizacao) {
-        this.id = id;
-        this.nome = nome;
-        this.dataAtualizacao = dataAtualizacao;
-    }
+    @Enumerated(EnumType.ORDINAL)
+    private Status status;
 }

@@ -1,5 +1,6 @@
 package br.com.atena.model;
 
+import br.com.atena.model.enuns.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +15,12 @@ public class EnderecoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String cep;
     private String logradouro;
-    private String numero;
     private String complemento;
     private String bairro;
-    private String cep;
-    @ManyToOne
-    @JoinColumn(name="CIDADE_ID")
-    private CidadeModel cidade;
+    private String localidade;
+    private String uf;
+    @Enumerated(EnumType.ORDINAL)
+    private Status status;
 }

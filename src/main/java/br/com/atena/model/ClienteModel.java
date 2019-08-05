@@ -1,13 +1,12 @@
 package br.com.atena.model;
 
+import br.com.atena.model.enuns.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "cliente")
 @AllArgsConstructor
@@ -19,4 +18,8 @@ public class ClienteModel {
     private Long id;
     private String nome;
     private String cpfOuCnpj;
+    @OneToMany
+    private List<EnderecoModel> enderecos;
+    @Enumerated(EnumType.ORDINAL)
+    private Status status;
 }
