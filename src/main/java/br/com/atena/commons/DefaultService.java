@@ -2,6 +2,9 @@ package br.com.atena.commons;
 
 import br.com.atena.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 
 import java.util.List;
 
@@ -15,8 +18,9 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
     }
 
     @Override
-    public List<T> findAll() {
-        return repo.findAll();
+    public Page<T> findAll(String nome, Integer page, Integer linesPerPage, String orderBy, String direction) {
+        PageRequest pageRequest = new PageRequest(page, linesPerPage, Direction.valueOf(direction), orderBy);
+        return repo.findAll(pageRequest);
     }
 
     @Override

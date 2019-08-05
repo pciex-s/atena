@@ -1,8 +1,6 @@
 package br.com.atena.commons;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 
 /**
@@ -13,7 +11,7 @@ public interface BaseService<T extends Object> {
 
     public T save(T t);
 
-    public List<T> findAll();
+    public Page<T> findAll(String nome, Integer page, Integer linesPerPage, String orderBy, String direction);
 
     public T findById(Long id) throws Exception;
 

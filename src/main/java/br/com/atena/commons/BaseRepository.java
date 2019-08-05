@@ -6,7 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import javax.transaction.Transactional;
+import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @param <Classe> Recebe a classe entidade que o JPA repository irá implementar
@@ -28,4 +30,5 @@ public interface BaseRepository<Classe extends Object, Id extends Serializable> 
     @Transactional
     @Query("update #{#entityName} set status = 0, data_atualizacao = sysdate where id = ?1")
     public void delete(Classe entidade);
+
 }
