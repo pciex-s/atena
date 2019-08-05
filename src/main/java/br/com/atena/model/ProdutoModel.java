@@ -28,6 +28,8 @@ public class ProdutoModel {
     private StatusProduto status;
     @ManyToMany(cascade = CascadeType.MERGE)
     private List<CategoriaModel> categorias = new ArrayList<>();
+    @Lob
+    private Byte[] imagem;
     @Column(name = "DATA_ATUALIZACAO")
     private LocalDate dataAtualizacao;
 }

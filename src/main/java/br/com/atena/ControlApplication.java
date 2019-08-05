@@ -40,10 +40,16 @@ public class ControlApplication implements CommandLineRunner {
 		EnderecoModel e1 = new EnderecoModel(null, "55920000", "Rua Eliud falcão", "", "Centro", "Itambé", "PE", Status.ATIVO);
 		ClienteModel cli1 = new ClienteModel(null, "Rafael", "31321123213", Arrays.asList(e1), Status.ATIVO);
 		CategoriaModel c1 = new CategoriaModel(null, "Alimentação", null, Status.ATIVO);
-		ProdutoModel p1 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1), null);
+		ProdutoModel p1 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
+		ProdutoModel p2 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
+		ProdutoModel p3 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
+		ProdutoModel p4 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
+		ProdutoModel p5 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
+		ProdutoModel p6 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
+		ProdutoModel p7 = new ProdutoModel(null, "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, null);
 		endRepo.save(e1);
 		cRepo.save(c1);
-		pRepo.save(p1);
+		pRepo.saveAll(Arrays.asList(p1,p2,p3,p4, p5,p6,p7));
 		cliRepo.save(cli1);
 	}
 }
