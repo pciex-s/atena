@@ -21,5 +21,5 @@ public class EnderecoModel {
     private String cep;
     @ManyToOne
     @JoinColumn(name="CIDADE_ID")
-    private Cidade cidade;
+    private CidadeModel cidade;
 }
