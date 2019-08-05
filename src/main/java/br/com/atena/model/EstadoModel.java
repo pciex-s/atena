@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @Data
 public class EstadoModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String uf;
