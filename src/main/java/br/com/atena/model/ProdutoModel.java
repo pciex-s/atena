@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ProdutoModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private Double preco;

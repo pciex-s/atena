@@ -15,5 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/produtos")
 public class ProdutoController extends DefaultController<ProdutoModel, ProdutoRepository, ProdutoService> {
-
+    @RequestMapping(value = "/categoria")
+    public ResponseEntity<List<ProdutoModel>> findProdutoByCategoria(){
+        return ResponseEntity.ok(getService().findByCategoria(Arrays.asList(new CategoriaModel())));
+    }
 }
