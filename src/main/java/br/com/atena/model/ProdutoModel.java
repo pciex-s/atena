@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.net.URI;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +30,7 @@ public class ProdutoModel {
     private StatusProduto status;
     @ManyToMany(cascade = CascadeType.MERGE)
     private List<CategoriaModel> categorias = new ArrayList<>();
-    @Lob
-    private Byte[] imagem;
+    private URI imagem;
     @Column(name = "DATA_ATUALIZACAO")
     private LocalDate dataAtualizacao;
 }

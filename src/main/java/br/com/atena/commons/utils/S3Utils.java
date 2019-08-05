@@ -4,8 +4,8 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
-@Data
 @Configuration
+@Data
 public class S3Utils {
     @Value("${aws.access_key_id}")
     private String awsId;
@@ -19,3 +19,4 @@ public class S3Utils {
     @Value("${s3.bucket}")
     private String bucketName;
 }
+

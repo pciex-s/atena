@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 @ControllerAdvice
-public class ResourceExceptionHandler{
+public class ResourceExceptionHandler {
     @ExceptionHandler(ObjectNotFoundException.class)
     public ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException objectNotFoundException,
                                                         HttpServletRequest httpServletRequest) {
@@ -21,6 +21,5 @@ public class ResourceExceptionHandler{
                 httpServletRequest.getRequestURI());
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(standardError);
-
     }
 }
