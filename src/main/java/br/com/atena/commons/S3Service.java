@@ -1,12 +1,12 @@
 package br.com.atena.commons;
 
 import br.com.atena.commons.utils.S3Utils;
+import br.com.atena.exceptions.FileException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,7 +32,7 @@ public class S3Service {
             String contentType = multipartFile.getContentType();
             return uploadFile(is, fileName, contentType);
         } catch (IOException e) {
-            new Exception("Erro de IO: " + e.getMessage());
+            new FileException("Erro de IO: " + e.getMessage());
         }
         return null;
     }
@@ -46,9 +46,8 @@ public class S3Service {
             LOG.info("Upload finalizado");
             return s3Client.getUrl(s3.getBucketName(), fileName).toURI();
         } catch (URISyntaxException e) {
-            new Exception("Erro de IO: " + e.getMessage());
+            new FileException("Erro de IO: " + e.getMessage());
         }
         return null;
     }
-
 }

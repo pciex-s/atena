@@ -18,5 +18,11 @@ public class S3Utils {
 
     @Value("${s3.bucket}")
     private String bucketName;
+
+    @Value("${img.profile.size}")
+    private int tamanhoImagem;
+
+    @Value("${img.profile.format}")
+    private String formatoImagem;
 }
 
