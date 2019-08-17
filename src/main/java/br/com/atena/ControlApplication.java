@@ -47,9 +47,15 @@ public class ControlApplication implements CommandLineRunner {
 		ProdutoModel p5 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null ,false);
 		ProdutoModel p6 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null ,false);
 		ProdutoModel p7 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p8 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p9 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p10 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p11 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p12 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p13 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
 		endRepo.save(e1);
 		cRepo.save(c1);
-		pRepo.saveAll(Arrays.asList(p1,p2,p3,p4, p5,p6,p7));
+		pRepo.saveAll(Arrays.asList(p1,p2,p3,p4, p5,p6,p7,p8,p9,p10,p11,p12,p13));
 		cliRepo.save(cli1);
 	}
 }

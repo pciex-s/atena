@@ -5,16 +5,18 @@ import br.com.atena.model.enuns.StatusProduto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "Produto")
+@Entity(name = "produto")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Where(clause = "exclusao = false")
 public class ProdutoModel extends BaseEntity<Long> {
     private String nome;
     private Double preco;
@@ -25,6 +27,7 @@ public class ProdutoModel extends BaseEntity<Long> {
     @Enumerated(EnumType.ORDINAL)
     private StatusProduto status;
     @ManyToMany(cascade = CascadeType.MERGE)
-    private List<CategoriaModel> categorias = new ArrayList<>();
+    private List<CategoriaModel> categorias;
     private URI imagem;
+    private boolean exclusao;
 }

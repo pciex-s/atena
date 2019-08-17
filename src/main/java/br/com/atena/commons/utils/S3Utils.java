@@ -2,9 +2,9 @@ package br.com.atena.commons.utils;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 @Data
 public class S3Utils {
     @Value("${aws.access_key_id}")
