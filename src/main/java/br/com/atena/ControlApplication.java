@@ -38,15 +38,15 @@ public class ControlApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		EnderecoModel e1 = new EnderecoModel("55920000", "Rua Eliud falcão", "", "Centro", "Itambé", "PE");
-		ClienteModel cli1 = new ClienteModel( "Rafael", "31321123213", Arrays.asList(e1));
+		ClienteModel cli1 = new ClienteModel( "Rafael", "31321123213", Arrays.asList(e1), false);
 		CategoriaModel c1 = new CategoriaModel("Alimentação");
-		ProdutoModel p1 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null );
-		ProdutoModel p2 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null );
-		ProdutoModel p3 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null );
-		ProdutoModel p4 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null );
-		ProdutoModel p5 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null );
-		ProdutoModel p6 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null );
-		ProdutoModel p7 = new ProdutoModel( "Pão", 10.0, 10.0, "1111111",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null);
+		ProdutoModel p1 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false );
+		ProdutoModel p2 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
+		ProdutoModel p3 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null , false);
+		ProdutoModel p4 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null ,false);
+		ProdutoModel p5 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null ,false);
+		ProdutoModel p6 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null ,false);
+		ProdutoModel p7 = new ProdutoModel( "Pão", 10.0, 10.0, "123456789123456789",1	, 10.0,StatusProduto.ESTOQUE,Arrays.asList(c1),null, false);
 		endRepo.save(e1);
 		cRepo.save(c1);
 		pRepo.saveAll(Arrays.asList(p1,p2,p3,p4, p5,p6,p7));

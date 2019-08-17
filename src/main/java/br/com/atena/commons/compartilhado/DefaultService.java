@@ -16,7 +16,6 @@ public class DefaultService<T extends BaseEntity<Long>, R extends BaseRepository
     public T save(T t) {
         t.setId(null);
         t.setDataCriacao(LocalDateTime.now());
-        t.setExclusao(false);
         return repo.save(t);
     }
 
@@ -29,7 +28,7 @@ public class DefaultService<T extends BaseEntity<Long>, R extends BaseRepository
     @Override
     public T findById(Long id) throws Exception {
         return repo.findById(id).orElseThrow(
-                () -> new ObjectNotFoundException("Objeto com o id: " + id + " não encontrado"));
+                    () -> new ObjectNotFoundException("Objeto com o id: " + id + " não encontrado"));
     }
 
     @Override

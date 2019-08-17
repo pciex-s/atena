@@ -14,9 +14,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Where(clause = "exclusao = false")
 public class ClienteModel extends BaseEntity<Long> {
     private String nome;
     private String cpfOuCnpj;
     @OneToMany
     private List<EnderecoModel> enderecos;
+    private boolean exclusao;
 }
