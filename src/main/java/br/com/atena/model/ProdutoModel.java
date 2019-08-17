@@ -1,14 +1,13 @@
 package br.com.atena.model;
 
+import br.com.atena.commons.compartilhado.BaseEntity;
 import br.com.atena.model.enuns.StatusProduto;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.net.URI;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProdutoModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ProdutoModel extends BaseEntity<Long> {
     private String nome;
     private Double preco;
     private Double desconto;
@@ -31,6 +27,4 @@ public class ProdutoModel {
     @ManyToMany(cascade = CascadeType.MERGE)
     private List<CategoriaModel> categorias = new ArrayList<>();
     private URI imagem;
-    @Column(name = "DATA_ATUALIZACAO")
-    private LocalDate dataAtualizacao;
 }

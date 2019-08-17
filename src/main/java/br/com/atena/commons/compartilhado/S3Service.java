@@ -1,4 +1,4 @@
-package br.com.atena.commons;
+package br.com.atena.commons.compartilhado;
 
 import br.com.atena.commons.utils.S3Utils;
 import br.com.atena.exceptions.FileException;

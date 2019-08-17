@@ -1,4 +1,4 @@
-package br.com.atena.commons;
+package br.com.atena.commons.compartilhado;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -6,9 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import javax.transaction.Transactional;
-import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @param <Classe> Recebe a classe entidade que o JPA repository irá implementar
@@ -19,16 +17,16 @@ import java.util.List;
  */
 
 @NoRepositoryBean
-public interface BaseRepository<Classe extends Object, Id extends Serializable> extends JpaRepository<Classe, Id> {
+public interface BaseRepository<Classe extends BaseEntity<Long>, Id extends Serializable> extends JpaRepository<Classe, Id> {
 
     @Modifying
     @Transactional
-    @Query("update #{#entityName} set status = 0, data_atualizacao = sysdate where id = ?1")
+    @Query("update #{#entityName} set exclusao = true, dataAtualizacao = sysdate where id = ?1")
     public void delete(Long id);
 
     @Modifying
     @Transactional
-    @Query("update #{#entityName} set status = 0, data_atualizacao = sysdate where id = ?1")
+    @Query("update #{#entityName} set exclusao = true, dataAtualizacao = sysdate where id = ?1")
     public void delete(Classe entidade);
 
 }

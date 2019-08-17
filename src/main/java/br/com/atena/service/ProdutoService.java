@@ -1,7 +1,7 @@
 package br.com.atena.service;
 
-import br.com.atena.commons.DefaultService;
-import br.com.atena.commons.S3Service;
+import br.com.atena.commons.compartilhado.DefaultService;
+import br.com.atena.commons.compartilhado.S3Service;
 import br.com.atena.commons.utils.ImageService;
 import br.com.atena.exceptions.FileException;
 import br.com.atena.exceptions.ObjectNotFoundException;

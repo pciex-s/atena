@@ -1,4 +1,4 @@
-package br.com.atena.commons;
+package br.com.atena.commons.compartilhado;
 
 import br.com.atena.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,12 +6,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 
-public class DefaultService<T extends Object, R extends BaseRepository<T, Long>> implements BaseService<T> {
+import java.time.LocalDateTime;
+
+public class DefaultService<T extends BaseEntity<Long>, R extends BaseRepository<T, Long>> implements BaseService<T> {
     @Autowired
     private R repo;
 
     @Override
     public T save(T t) {
+        t.setId(null);
+        t.setDataCriacao(LocalDateTime.now());
+        t.setExclusao(false);
         return repo.save(t);
     }
 
@@ -34,6 +39,7 @@ public class DefaultService<T extends Object, R extends BaseRepository<T, Long>>
 
     @Override
     public void atualizar(Long id, T t) {
+        t.setDataAtualizacao(LocalDateTime.now());
         repo.save(t);
     }
 

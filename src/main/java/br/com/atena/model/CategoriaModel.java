@@ -1,26 +1,16 @@
 package br.com.atena.model;
 
-import br.com.atena.model.enuns.Status;
+import br.com.atena.commons.compartilhado.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
 
 @Entity(name = "categoria")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoriaModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CategoriaModel extends BaseEntity<Long> {
     private String nome;
-    @Column(name = "DATA_ATUALIZACAO")
-    private LocalDate dataAtualizacao;
-    @Enumerated(EnumType.ORDINAL)
-    private Status status;
 }
