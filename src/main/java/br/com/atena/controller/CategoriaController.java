@@ -1,6 +1,6 @@
 package br.com.atena.controller;
 
-import br.com.atena.commons.DefaultController;
+import br.com.atena.commons.compartilhado.DefaultController;
 import br.com.atena.model.CategoriaModel;
 import br.com.atena.repository.CategoriaRepository;
 import br.com.atena.service.CategoriaService;

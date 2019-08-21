@@ -1,25 +1,21 @@
 package br.com.atena.model;
 
+import br.com.atena.commons.compartilhado.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity(name = "endereco")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class EnderecoModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class EnderecoModel extends BaseEntity<Long> {
+    private String cep;
     private String logradouro;
-    private String numero;
     private String complemento;
     private String bairro;
-    private String cep;
-    @ManyToOne
-    @JoinColumn(name="CIDADE_ID")
-    private CidadeModel cidade;
+    private String localidade;
+    private String uf;
 }
